@@ -22,10 +22,12 @@ int	main(int argc, char **argv)
 	int		fd;
 
 	(void)fd;
-	fd = open("./test_file_06", O_RDONLY);
+	// fd = open("./test_file_06", O_RDONLY);
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
-	while((rval = get_next_line(fd)))
+	while((rval = get_next_line(STDIN_FILENO)))
+	{
 		printf("%s", rval);
-	free (rval);
+		free (rval);
+	}
 	return (0);
 }
