@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 
 	(void)fd1;
 	(void)fd2;
+	s1 = NULL;
+	s2 = NULL;
 	fd1 = open("./test_file_letter_lines", O_RDONLY);
 	fd2 = open("./test_file_number_lines", O_RDONLY);
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
@@ -40,5 +42,9 @@ int	main(int argc, char **argv)
 	}
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
 	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
+	if (s1)
+		free(s1);
+	if (s2)
+		free(s2);
 	return (0);
 }
