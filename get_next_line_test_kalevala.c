@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_test_01.c                            :+:      :+:    :+:   */
+/*   get_next_line_test_kalevala.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvarila <jvarila@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 13:42:01 by jvarila           #+#    #+#             */
-/*   Updated: 2024/11/25 13:24:14 by jvarila          ###   ########.fr       */
+/*   Updated: 2024/11/25 11:55:26 by jvarila          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,20 @@
 
 int	main(int argc, char **argv)
 {
+	(void)argc;
+	(void)argv;
 	char	*rval;
 	int		fd;
 
-	(void)argc;
-	(void)argv;
 	(void)fd;
+	fd = open("./kalevala", O_RDONLY);
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
 	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
-	rval = get_next_line(STDIN_FILENO);
-	printf("%s", rval);
-	free (rval);
+	while((rval = get_next_line(fd)))
+	{
+		printf("%s", rval);
+		free (rval);
+	}
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
 	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
 	return (0);
