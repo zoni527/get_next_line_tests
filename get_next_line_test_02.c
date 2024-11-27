@@ -23,14 +23,20 @@ int	main(int argc, char **argv)
 
 	(void)fd;
 	// fd = open("./test_file_06", O_RDONLY);
-	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
-	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
+	if (argc == 1)
+	{
+		printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
+		printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
+	}
 	while((rval = get_next_line(STDIN_FILENO)))
 	{
 		printf("%s", rval);
 		free (rval);
 	}
-	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
-	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
+	if (argc == 1)
+	{
+		printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
+		printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
+	}
 	return (0);
 }
