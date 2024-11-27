@@ -36,9 +36,15 @@ int	main(int argc, char **argv)
 		printf("%s", s1);
 		printf("%s", s2);
 		if (s1)
+		{
 			free(s1);
+			s1 = NULL;
+		}
 		if (s2)
+		{
 			free(s2);
+			s2 = NULL;
+		}
 	}
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
 	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
