@@ -1,5 +1,5 @@
 #!/bin/bash
-for f in ./test_file_[0-9a-z]*[^.sh]
+for f in ./test_file_[0-9a-z]*
 do
 	./get_next_line_test_02 a < $f > ${f}_test_02_output
 	diff $f ${f}_test_02_output -u --color
