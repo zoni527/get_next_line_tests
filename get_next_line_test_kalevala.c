@@ -14,6 +14,10 @@
 #include <stdio.h>
 #include <fcntl.h>
 
+#ifndef FILE_LIMIT
+# define FILE_LIMIT 5
+#endif
+
 int	main(int argc, char **argv)
 {
 	(void)argc;
@@ -22,7 +26,7 @@ int	main(int argc, char **argv)
 	int		fd;
 
 	(void)fd;
-	fd = open("./kalevala", O_RDONLY);
+	fd = open("./test_file_kalevala", O_RDONLY);
 	printf("%20s%d\n", "BUFFER_SIZE: ", BUFFER_SIZE);
 	printf("%20s%d\n", "FILE_LIMIT: ", FILE_LIMIT);
 	while((rval = get_next_line(fd)))
