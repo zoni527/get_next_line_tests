@@ -16,7 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 BS ?= 1024
 FL ?= 5
 
-SRCDIR = ~/Projects/get_next_line/try2/
+SRCDIR = ../get_next_line/
 SRC = $(SRCDIR)get_next_line.c $(SRCDIR)get_next_line_utils.c
 BONUSSRC = $(SRCDIR)get_next_line_bonus.c $(SRCDIR)get_next_line_utils_bonus.c
 
@@ -47,23 +47,23 @@ bonus:	get_next_line_test_01_bonus	get_next_line_test_02_bonus \
 
 get_next_line_test_01_bonus: get_next_line_test_01.c \
 	$(BONUSSRC) get_next_line_bonus.h
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(SRC) $< -o $@ -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(BONUSSRC) $< -o $@ -g
 
 get_next_line_test_02_bonus: get_next_line_test_02.c \
 	$(BONUSSRC) get_next_line_bonus.h
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(SRC) $< -o $@ -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(BONUSSRC) $< -o $@ -g
 
 get_next_line_test_03_bonus: get_next_line_test_03.c \
 	$(BONUSSRC) get_next_line_bonus.h
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(SRC) $< -o $@ -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(BONUSSRC) $< -o $@ -g
 
 get_next_line_test_kalevala_bonus: get_next_line_test_kalevala.c \
 	$(BONUSSRC) get_next_line_bonus.h
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(SRC) $< -o $@ -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(BONUSSRC) $< -o $@ -g
 
 get_next_line_test_null_bonus: get_next_line_test_null.c \
 	$(BONUSSRC) get_next_line_bonus.h
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(SRC) $< -o $@ -g
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BS) -D FILE_LIMIT=$(FL) $(BONUSSRC) $< -o $@ -g
 
 get_next_line_bonus.h: $(SRCDIR)get_next_line_bonus.h
 	cp $< ./

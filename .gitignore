@@ -53,4 +53,5 @@ dkms.conf
 
 get_next_line_test_*[^.csh]
 *output
-_bonus
+*_bonus
+
