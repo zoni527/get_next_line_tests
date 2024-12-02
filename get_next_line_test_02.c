@@ -14,6 +14,10 @@
 #include <stdio.h>
 #include <fcntl.h>
 
+#ifndef FILE_LIMIT
+# define FILE_LIMIT 1
+#endif
+
 int	main(int argc, char **argv)
 {
 	(void)argc;
